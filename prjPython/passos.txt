@@ -1,0 +1,43 @@
+1- Verificar a versão do Python (Python 3.x.x)
+
+2- Criar um ambiente virtual (apt install python3.10-venv)
+
+3- Ativar ambiente virtual (source ./env/bin/activate)
+
+4- Instalar Django (pip install django)
+
+5- Verificar versão do Django instalada (python -m django --version)
+
+6- Guardar as dependências (pip freeze > requeriments.txt)
+
+7- Criar um projeto com Django (django-admin startproject NOME_PROJETO)
+
+8- Na pasta settings.py
+    - Importar os no início (import os)
+    - Em templates -> DIR, colocar pasta padrão dos templates ('DIRS': ['templates'])
+    - Abaixo de STATIC_URL, adicionar a seguinte linha (STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles'))
+
+9- Criação de um aplicativo dentro (da pasta) do projeto Django (python manage.py startapp NOME_APP)
+
+10- Criar a pasta templates dentro da pasta do aplicativo
+
+11- Criar o arquivo urls.py dentro da pasta do aplicativo
+
+12- Na pasta do projeto, no arquivo urls.py, adicionar um caminho para as urls do app ( path('NOME_APP', include('NOME_APP.urls')),)
+
+13- Realizar config das urls do app:
+
+    from django.urls import path 
+    from .views import index #cria o index da aplicação
+
+    urlpatterns = [
+        path('',index,name='index') #url para index
+    ]   
+
+14- Config da primeira página, em NOME_APPp/views.py
+
+    from .views import index
+    urlpatterns = [
+        path('',index,name='index')
+    ]
+
