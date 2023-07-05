@@ -34,10 +34,32 @@
         path('',index,name='index') #url para index
     ]   
 
-14- Config da primeira página, em NOME_APPp/views.py
-
+14- Config da primeira página, em NOME_APP/views.py
     from .views import index
     urlpatterns = [
         path('',index,name='index')
     ]
+
+15- Criação da primeira Model User
+
+    class User(models.Model):
+        nome = models.CharField('nome',max_length=255)
+        telefone = models.IntegerField('telefone')
+        email = models.CharField('email',max_length=255)
+
+        def __str__(self):
+            return f"Nome: {self.nome}, Telefone: {self.telefone}, Email: {self.email}"
+
+16- Registro do app nas configurações do projeto (settings.py)
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'NOME_APP'
+    ]
+
+17- Executar comando de migrations dentro da pasta do projeto (python manage.py makemigrations && python manage.py migrate)
 
