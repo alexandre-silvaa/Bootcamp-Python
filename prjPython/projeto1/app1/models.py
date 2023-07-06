@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     nome = models.CharField('nome',max_length=255)
-    telefone = models.IntegerField('telefone')
+    telefone = models.BigIntegerField('telefone')
     email = models.CharField('email',max_length=255)
 
     def __str__(self):
