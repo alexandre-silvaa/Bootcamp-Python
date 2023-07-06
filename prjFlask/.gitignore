@@ -1,0 +1,11 @@
+/venv/
+/env/
+env/
+.env
+/settings/local.py
+/settings/production.py
+/db.sqlite3
+/staticfiles/
+/__pycache__/
+*.pyc
+/migrations/
