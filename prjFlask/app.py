@@ -1,20 +1,14 @@
 import os
 from flask import Flask, render_template
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+from flask_migrate import Migrate
+from models.User import db
+from form import NameForm
 
-# caminho para a pasta de templates
-template_dir = os.path.abspath('./templates')
+app = Flask(__name__)
+app.config.from_object('config')
 
-app = Flask(__name__, template_folder=template_dir)
-
-# chave para validação de formulários
-app.config['SECRET_KEY'] = 'PASSARINHODABARRIGAMARELA'
-
-class NameForm(FlaskForm):
-    name = StringField('Qual é o seu nome?', validators=[DataRequired()])
-    submit = SubmitField('Enviar')
+db.init_app(app)
+migrate = Migrate(app,db)
 
 # rota index
 @app.route('/')
