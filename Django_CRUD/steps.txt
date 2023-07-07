@@ -1,0 +1,30 @@
+----------------------------- INICIAR PROJETO ------------------------------
+
+Criar ambiente virtual dentro da pasta do projeto (python3 -m venv ./env)
+Ativar ambiente virtual dentro da pasta do projeto (source ./env/bin/activate)
+Instalar Django (pip install django)
+Guardar dependências do projeto (pip freeze > requeriments.txt)
+Criar projeto Django (django-admin startproject NOME_PROJETO)
+
+------------------------------- CONFIGURAÇÕES --------------------------------
+
+Na pasta do projeto, alterar o arquivo settings.py
+    - Importar os no início (import os)
+    - Em templates -> DIR, colocar pasta padrão dos templates ('DIRS': ['templates'])
+    - Abaixo de STATIC_URL, adicionar a seguinte linha (STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles'))
+
+----------------------------- INICIAR APLICATIVO -----------------------------
+
+Criação de um aplicativo dentro (da pasta) do projeto Django (python manage.py startapp NOME_APP)
+Na pasta do projeto, alterar o arquivo settings.py
+    - Em INSTALLED_APPS, adicionar o nome do aplicativo que será criado no projeto
+
+Criar arquivos urls.py e forms.py na pasta do aplicativo
+Criar pasta static e instalar arquivos bootstrap 
+Criar pasta de templates
+
+------------------------------------------------------------------------------
+
+Rodar projeto na pasta principal do projeto (python manage.py runserver)
+Rodar migrations (python manage.py makemigrations && python manage.py migrate)
+Criar superusuário (python manage.py createsuperuser)

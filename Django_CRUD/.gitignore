@@ -1,0 +1,6 @@
+/venv/
+/env/
+env/
+/staticfiles/
+prjDjangoCRUD/prjDjangoCRUD/__pycache__
+prjDjangoCRUD/appDjangoCRUD/migrations
